@@ -1,0 +1,264 @@
+@import "https://fonts.googleapis.com/css?family=Inconsolata";
+html {
+  min-height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #000000;
+  background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Inconsolata', Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow: 0 0 1ex #33ff33, 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.noise {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: .02;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+  background-size: auto 4px;
+  z-index: 1;
+}
+
+.overlay::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(2%, rgba(32, 128, 32, 0.2)), color-stop(3%, rgba(32, 128, 32, 0.8)), color-stop(3%, rgba(32, 128, 32, 0.2)), to(transparent));
+  background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%);
+  background-repeat: no-repeat;
+  -webkit-animation: scan 7.5s linear 0s infinite;
+          animation: scan 7.5s linear 0s infinite;
+}
+
+@-webkit-keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%, 100% {
+    background-position: 0 100vh;
+  }
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%, 100% {
+    background-position: 0 100vh;
+  }
+}
+.terminal {
+  box-sizing: inherit;
+  position: absolute;
+  height: 100%;
+  width: 1000px;
+  max-width: 100%;
+  padding: 4rem;
+  text-transform: uppercase;
+}
+
+.output {
+  color: rgba(128, 255, 128, 0.8);
+  text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.output::before {
+  content: "> ";
+}
+
+/***** SKILLS *****/
+
+ul.publications {
+	margin-left: 2em;
+	list-style-position: outside;
+}
+
+
+
+/***** HEADER *****/
+
+header #title, header #subtitle, footer {
+	font-family: Georgia, serif;
+}
+
+header #title {
+	font-size: 6rem;
+	margin-bottom: 0;
+}
+
+header #title img.flag {
+	height: 6rem;
+	position: relative;
+	top: 1rem;
+	float: right;
+	margin-left: 50px;
+}
+
+header #subtitle {
+	font-size: 2.5rem;
+	color: #00ff00;
+}
+
+@media (max-width: 800px) {
+	header #title {
+		font-size: 5rem;
+	}
+	header #title img.flag {
+		height: 5rem;
+		top: 0.55rem;
+	}
+	header #subtitle {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 670px) {
+	header #subtitle {
+
+    font-size: 1.375rem;
+
+	}
+}
+
+@media (max-width: 670px) {
+	header #title {
+		font-size: 4.5rem;
+	}
+	header #title img.flag {
+		height: 4.5rem;
+		top: 0.5rem;
+	}
+}
+
+@media (max-width: 450px) {
+	header #title {
+		font-size: 5rem;
+	}
+	header #title img.flag {
+		height: 5rem;
+		top: -5.25rem;
+		margin-left: 0;
+	}
+}
+
+
+/***** NAV BAR *****/
+
+nav {
+	margin-top: 25px;
+}
+
+nav hr {
+	border-color: #00ff00;
+	margin-bottom: 15px;
+}
+
+nav ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	display: inline-block;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul.u-pull-right li {
+	margin-right: 0px;
+	margin-left: 20px;
+}
+
+nav ul li a {
+	color: #00ff00;
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+
+/***** BODY *****/
+
+main {
+	background-color: black;
+	padding: 40px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	border: 1px solid #00ff00;
+}
+
+main h2, main h3, main h4 {
+	color: #00ff00;
+}
+
+main p {
+	font-size: 1.65rem;
+}
+
+
+/***** FOOTER *****/
+
+footer {
+
+
+    margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	text-align: center;
+	color: #00ff00;
+
+}
+
+footer .flag-wrapper {
+
+	display: block;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer .flag-wrapper .stars {
+	color: #00ff00;
+	padding-right: 10px;
+	padding-left: 10px;
+	position: relative;
+	top: -20px;
+}
+
+footer .flag-wrapper .star {
+	padding-right: 8px;
+    padding-left: 8px;
+
+}
+
+
+footer img.flag {
+
+	height: 50px;
+}
